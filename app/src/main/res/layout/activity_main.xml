@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Persistencia de Datos"
+        android:textSize="26dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="sans-serif-black"
+        />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        app:srcCompat="@mipmap/e3" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Registro alumno"
+        android:id="@+id/bnt_RegistroAlumno"
+        android:layout_marginTop="40dp"
+        android:onClick="onClick"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consulta alumno"
+        android:id="@+id/bnt_ConsultaAlmuno"
+        android:layout_marginTop="20dp"
+        android:onClick="onClick"
+        />
+</LinearLayout>
