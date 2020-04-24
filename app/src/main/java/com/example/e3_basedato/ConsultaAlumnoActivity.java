@@ -117,7 +117,7 @@ public class ConsultaAlumnoActivity extends AppCompatActivity {
 
 
     }
-    private void limpiar() {
+    public void limpiar() {
         campoNombre.setText("");
         campoCiudadNacimiento.setText("");
         campoMatricula.setText("");

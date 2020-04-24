@@ -24,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.bnt_ConsultaAlmuno:
                 miIntent=new Intent(MainActivity.this,ConsultaAlumnoActivity.class);
                 break;
+            case R.id.bnt_ListaAlmuno:
+                miIntent=new Intent(MainActivity.this,ListViewActivity.class);
+                break;
+
         }
         if (miIntent!=null){
             startActivity(miIntent);

@@ -7,21 +7,30 @@
     android:orientation="vertical"
     tools:context=".RegistroAlumnoActivity">
 
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="REGISTRO DE ALUMNO"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="20dp"/>
     />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="155dp"
+
+        android:background="#65FFFFFF"
+        app:srcCompat="@android:mipmap/sym_def_app_icon" />
 
     <Button
         android:id="@+id/btnFoto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:text="Insertar imagen" />
+        android:text="Seleccionar imagen" />
 
     <EditText
         android:id="@+id/campoId"
@@ -59,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Registrar Alumno"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:onClick="onClick"/>
 
 
