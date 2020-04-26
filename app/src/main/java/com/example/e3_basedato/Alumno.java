@@ -1,5 +1,7 @@
 package com.example.e3_basedato;
 
+import android.graphics.Bitmap;
+
 import java.io.Serializable;
 
 public class Alumno implements Serializable {
@@ -9,15 +11,16 @@ public class Alumno implements Serializable {
     private String ciuNac;
     private String mat;
     private String expCrea;
-    private String imagen;
+    private Bitmap image;
 
-    public Alumno( Integer id, String nombre, String ciuNac, String mat, String expCrea, String imagen){
+    public Alumno( Integer id, String nombre, String ciuNac, String mat, String expCrea,Bitmap image){
         this.id = id;
         this.nombre = nombre;
         this.ciuNac = ciuNac;
         this.mat = mat;
         this.expCrea = expCrea;
-        this.imagen = imagen;
+
+        this.image = image;
     }
     public Alumno()
     {
@@ -65,11 +68,12 @@ public class Alumno implements Serializable {
         this.expCrea = expCrea;
     }
 
-    public String getImagen() {
-        return imagen;
+
+    public Bitmap getImage() {
+        return image;
     }
 
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
+    public void setImage(Bitmap image) {
+        this.image = image;
     }
 }

@@ -30,7 +30,7 @@ public class ListaAlumnoAdapter extends RecyclerView.Adapter<ListaAlumnoAdapter.
         holder.ciuNac.setText(listaAlumno.get(position).getCiuNac());
         holder.mat.setText(listaAlumno.get(position).getMat());
         holder.expCrea.setText(listaAlumno.get(position).getExpCrea());
-        //holder.ciuNac.setText(listaAlumno.get(position).getCiuNac());
+        //holder.imagen.setText(listaAlumno.get(position).getImage());
     }
 
     @Override

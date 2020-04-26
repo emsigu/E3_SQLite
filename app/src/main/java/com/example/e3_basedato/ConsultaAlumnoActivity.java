@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +19,7 @@ public class ConsultaAlumnoActivity extends AppCompatActivity {
     TextView campoCiudadNacimiento;
     TextView campoMatricula;
     TextView campoExpresionCreativa;
-    //Button campoFoto;
+    ImageView campoFoto;
 
     ConexionSQLiteHelper conn;
 
@@ -34,15 +35,13 @@ public class ConsultaAlumnoActivity extends AppCompatActivity {
         campoCiudadNacimiento = (TextView) findViewById(R.id.campoCiudadNacimientoConsulta);
         campoMatricula = (TextView) findViewById(R.id.campoMatriculaConsulta);
         campoExpresionCreativa = (TextView) findViewById(R.id.campoExprescionCreativaConsulta);
-        //campoFoto = (Button) findViewById(R.id.btnFoto);
+        campoFoto = (ImageView) findViewById(R.id.imageConsulta);
 
     }
     public void onClick(View view) {
 
         switch (view.getId()){
-            case R.id.btnConsultar:
-                consultar();
-                //consultarSql();
+            case R.id.btnConsultar: consultar();
                 break;
             case R.id.btnActualizar: actualizarAlumno();
                 break;
@@ -63,6 +62,7 @@ public class ConsultaAlumnoActivity extends AppCompatActivity {
     }
     private void actualizarAlumno() {
         SQLiteDatabase db=conn.getWritableDatabase();
+
         String[] parametros={campoId.getText().toString()};
         ContentValues values=new ContentValues();
         values.put(Utilidades.CAMPO_NOMBRE,campoNombre.getText().toString());
@@ -76,27 +76,7 @@ public class ConsultaAlumnoActivity extends AppCompatActivity {
         db.close();
 
     }
-    private void consultarSql() {
-        SQLiteDatabase db=conn.getReadableDatabase();
-        String[] parametros={campoId.getText().toString()};
 
-        try {
-            //select nombre,telefono from usuario where codigo=?
-            Cursor cursor=db.rawQuery("SELECT "+Utilidades.CAMPO_NOMBRE+","+Utilidades.CAMPO_CIUDAD_NAC+ ","+Utilidades.CAMPO_MATRICULA+","+Utilidades.CAMPO_EXP_CREATIVA+","+Utilidades.CAMPO_FOTO+" FROM "+Utilidades.TABLA_ALUMNO+" WHERE "+Utilidades.CAMPO_ID+"=? ",parametros);
-
-            cursor.moveToFirst();
-            campoNombre.setText(cursor.getString(0));
-            campoCiudadNacimiento.setText(cursor.getString(1));
-            campoMatricula.setText(cursor.getString(2));
-            campoExpresionCreativa.setText(cursor.getString(3));
-            //campoFoto.setText(cursor.getString(4));
-
-        }catch (Exception e){
-            Toast.makeText(getApplicationContext(),"El registro no existe",Toast.LENGTH_LONG).show();
-            limpiar();
-        }
-
-    }
     private void consultar() {
         SQLiteDatabase db=conn.getReadableDatabase();
         String[] parametros={campoId.getText().toString()};

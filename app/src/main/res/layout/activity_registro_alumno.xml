@@ -21,16 +21,11 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="155dp"
-
+        android:id="@+id/imageIV"
         android:background="#65FFFFFF"
-        app:srcCompat="@android:mipmap/sym_def_app_icon" />
-
-    <Button
-        android:id="@+id/btnFoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:text="Seleccionar imagen" />
+        app:srcCompat="@android:mipmap/sym_def_app_icon"
+        android:onClick="chooseImage"
+        />
 
     <EditText
         android:id="@+id/campoId"
